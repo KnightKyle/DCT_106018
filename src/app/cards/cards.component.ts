@@ -14,9 +14,9 @@ export class CardsComponent implements OnInit {
   type;
 
   ngOnInit() {
-    // this.route.params.subscribe((params) => {
-    //   this.type = params['type'];
-    // });
+    this.route.params.subscribe((params) => {
+      this.type = params['type'];
+    });
 
     // this.type = this.route.snapshot.params['type'];
   }
@@ -24,6 +24,18 @@ export class CardsComponent implements OnInit {
   GoFlot() {
     // this.router.navigateByUrl('/charts/flot');
     this.router.navigate(['/charts', 'flot'])
+  }
+
+  GoNext(num: number) {
+    let nextid = +this.type + num;
+
+    // this.router.navigate(['/cards', nextid]);
+    // this.router.navigateByUrl('/cards/' + nextid);
+
+    this.router.navigate(['..', nextid], {
+      relativeTo: this.route
+    });
+
   }
 
 }
