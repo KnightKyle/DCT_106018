@@ -1,4 +1,3 @@
-import { FlotComponent } from './charts/flot/flot.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Route } from '@angular/router';
 
@@ -8,7 +7,10 @@ import { CardsComponent } from './cards/cards.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'cards/:type', component: CardsComponent }
+  { path: 'cards/:type', component: CardsComponent },
+  { path: 'charts',
+    loadChildren: './charts/charts.module#ChartsModule'
+  }
 ];
 
 @NgModule({

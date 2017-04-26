@@ -19,7 +19,6 @@ import { CardsComponent } from './cards/cards.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ChartsModule,
     AppRoutingModule
   ],
   providers: [],
