@@ -8,7 +8,7 @@ import { CardsComponent } from './cards/cards.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'cards', component: CardsComponent },
+  { path: 'cards/:type', component: CardsComponent },
   { path: 'charts',
     children: [
       { path: '', redirectTo: 'flot', pathMatch: 'full' },
