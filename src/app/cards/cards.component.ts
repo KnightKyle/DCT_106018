@@ -12,10 +12,12 @@ export class CardsComponent implements OnInit {
               public route : ActivatedRoute) { }
 
   type;
+  num;
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.type = params['type'];
+      this.num = params['num'];
     });
 
     // this.type = this.route.snapshot.params['type'];
@@ -32,8 +34,12 @@ export class CardsComponent implements OnInit {
     // this.router.navigate(['/cards', nextid]);
     // this.router.navigateByUrl('/cards/' + nextid);
 
-    this.router.navigate(['..', nextid], {
-      relativeTo: this.route
+    this.router.navigate(['..', nextid, { num: (+this.num) + num }], {
+      relativeTo: this.route,
+      queryParams: {
+        p3: 3,
+        p4: 4
+      }
     });
 
   }
