@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 export class CardsComponent implements OnInit {
 
   constructor(private router: Router,
-              private route : ActivatedRoute) { }
+              public route : ActivatedRoute) { }
 
   type;
 
@@ -18,7 +18,7 @@ export class CardsComponent implements OnInit {
     //   this.type = params['type'];
     // });
 
-    this.type = this.route.snapshot.params['type'];
+    // this.type = this.route.snapshot.params['type'];
   }
 
   GoFlot() {
