@@ -1,3 +1,4 @@
+import { EnsureInputGuard } from './ensure-input.guard';
 import { LayoutComponent } from './layout/layout.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Route, PreloadAllModules } from '@angular/router';
@@ -20,7 +21,7 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canDeactivate: [EnsureInputGuard] },
 ];
 
 @NgModule({

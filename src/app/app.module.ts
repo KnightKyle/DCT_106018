@@ -1,3 +1,4 @@
+import { EnsureInputGuard } from './ensure-input.guard';
 import { ChartsModule } from './charts/charts.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -28,7 +29,8 @@ import { LoginGuard } from './login.guard';
     AppRoutingModule
   ],
   providers: [
-    LoginGuard
+    LoginGuard,
+    EnsureInputGuard
   ],
   bootstrap: [AppComponent]
 })
