@@ -7,14 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassicComponent implements OnInit {
 
-  data: any;
+  data: any = {
+      name: 'Will',
+      sid: 'A123456789'
+    };;
 
   constructor() { }
 
   ngOnInit() {
-    this.data = {
-      name: 'Will'
-    };
+    this.data = {};
   }
 
 }
