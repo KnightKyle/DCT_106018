@@ -14,13 +14,13 @@ f.touched = {{ f.touched | json }}
 f.untouched = {{ f.untouched | json }}</pre>
     <div class="card">
       <div class="card-body">
-        <form method="post" action="/" class="form-horizontal" #f="ngForm">
+        <form (ngSubmit)="doSubmit(f)" class="form-horizontal" #f="ngForm">
           <fieldset>
             <div class="form-group" [class.has-error]="fName.touched && fName.invalid">
               <label class="col-sm-2 control-label">Name</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control rounded" required
-                       name="name" [(ngModel)]="data.name" #fName="ngModel">
+                       name="name" [ngModel]="data.name" #fName="ngModel">
                 <span class="help-block">
                   <pre>
 fName.value = {{ fName.value | json }}
@@ -42,7 +42,7 @@ fName.untouched = {{ fName.untouched | json }}</pre>
               <div class="col-sm-10">
                 <input type="text" class="form-control"
                        placeholder="請輸入 10 碼身份證字號"
-                       name="sid" [(ngModel)]="data.sid" #fSid="ngModel"
+                       name="sid" [ngModel]="data.sid" #fSid="ngModel"
                        required minlength="10" maxlength="10">
                 <span class="help-block">
                   <span *ngIf="fSid.touched && fSid.errors?.required">此欄位必填</span>
@@ -60,6 +60,10 @@ fSid.untouched = {{ fSid.untouched | json }}</pre>
               </div>
             </div>
           </fieldset>
+
+          <input type="submit" value="送出">
+          <input type="button" value="重設" (click)="doReset(f)">
+
           <fieldset>
             <div class="form-group">
               <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
