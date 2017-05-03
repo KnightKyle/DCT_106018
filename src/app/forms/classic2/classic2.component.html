@@ -56,6 +56,10 @@ form.controls.sid.untouched = {{ form.controls.sid.untouched | json }}</pre>
               </div>
             </div>
           </fieldset>
+
+          <input type="submit" value="送出">
+          <input type="button" value="重設" (click)="doReset(f)">
+
           <fieldset>
             <div class="form-group">
               <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
