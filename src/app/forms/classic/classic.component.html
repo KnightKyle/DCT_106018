@@ -1,7 +1,15 @@
 <section>
   <div class="container-fluid">
     <h5 class="mt0">Classic form controls and custom variants</h5>
-    <pre>{{ f.value | json }}</pre>
+    <pre>
+f.value = {{ f.value | json }}
+
+f.valid = {{ f.valid | json }}
+f.invalid = {{ f.invalid | json }}
+f.dirty = {{ f.dirty | json }}
+f.pristine = {{ f.pristine | json }}
+f.touched = {{ f.touched | json }}
+f.untouched = {{ f.untouched | json }}</pre>
     <div class="card">
       <div class="card-body">
         <form method="post" action="/" class="form-horizontal" #f="ngForm">
@@ -12,12 +20,15 @@
                 <input type="text" class="form-control rounded" required
                        name="name" [ngModel]="data.name" #fName="ngModel">
                 <span class="help-block">
-                  <pre>fName.valid = {{ fName.valid | json }}</pre>
-                  <pre>fName.invalid = {{ fName.invalid | json }}</pre>
-                  <pre>fName.dirty = {{ fName.dirty | json }}</pre>
-                  <pre>fName.pristine = {{ fName.pristine | json }}</pre>
-                  <pre>fName.touched = {{ fName.touched | json }}</pre>
-                  <pre>fName.untouched = {{ fName.untouched | json }}</pre>
+                  <pre>
+fName.value = {{ fName.value | json }}
+
+fName.valid = {{ fName.valid | json }}
+fName.invalid = {{ fName.invalid | json }}
+fName.dirty = {{ fName.dirty | json }}
+fName.pristine = {{ fName.pristine | json }}
+fName.touched = {{ fName.touched | json }}
+fName.untouched = {{ fName.untouched | json }}</pre>
                 </span>
               </div>
             </div>
