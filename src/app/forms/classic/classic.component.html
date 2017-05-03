@@ -63,12 +63,10 @@ fSid.untouched = {{ fSid.untouched | json }}</pre>
           </fieldset>
 </div>
 
-
           <input type="submit" value="送出">
           <input type="button" value="重設" (click)="doReset(f)">
 
-          <input type="button" value="測試"
-                 (click)="showLoading(fTest)" #fTest>
+          <input type="button" value="測試" show-loading>
 
           <fieldset>
             <div class="form-group">

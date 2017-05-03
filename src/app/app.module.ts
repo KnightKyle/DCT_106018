@@ -16,6 +16,7 @@ import { LoginGuard } from './login.guard';
 import { ClassicComponent } from './forms/classic/classic.component';
 import { Classic2Component } from './forms/classic2/classic2.component';
 import { BlockComponent } from './block/block.component';
+import { LoadingBtnDirective } from './loading-btn.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BlockComponent } from './block/block.component';
     LoginComponent,
     ClassicComponent,
     Classic2Component,
-    BlockComponent
+    BlockComponent,
+    LoadingBtnDirective
   ],
   imports: [
     BrowserModule,
