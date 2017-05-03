@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-classic2',
@@ -16,10 +16,20 @@ export class Classic2Component implements OnInit {
   };
   form: FormGroup;
   ngOnInit() {
+
     this.form = this.fb.group({
-      'name': 'Will',
-      'sid': 'A123456789'
+      'name': [
+          'Will', Validators.required
+        ],
+      'sid': [
+          'A123456789', [
+            Validators.required,
+            Validators.minLength(10),
+            Validators.maxLength(10)
+          ]
+        ]
     });
+
   }
 
 }
