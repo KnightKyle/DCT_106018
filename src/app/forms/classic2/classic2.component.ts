@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from "@angular/forms";
 
+export class DataModel {
+  name = 'Will';
+  sid = 'A123456789';
+}
+
 @Component({
   selector: 'app-classic2',
   templateUrl: './classic2.component.html',
@@ -10,10 +15,7 @@ export class Classic2Component implements OnInit {
 
   constructor(private fb: FormBuilder) { }
 
-  data: any = {
-    'name': 'Will',
-    'sid': 'A123456789'
-  };
+  data: any = new DataModel();
   form: FormGroup;
   ngOnInit() {
 
