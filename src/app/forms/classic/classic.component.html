@@ -2,6 +2,8 @@
   <div class="container-fluid">
     <h5 class="mt0">Classic form controls and custom variants</h5>
     <pre>
+data = {{ data | json }}
+
 f.value = {{ f.value | json }}
 
 f.valid = {{ f.valid | json }}
@@ -22,6 +24,7 @@ f.untouched = {{ f.untouched | json }}</pre>
                 <span class="help-block">
                   <pre>
 fName.value = {{ fName.value | json }}
+fName.errors = {{ fName.errors | json }}
 
 fName.valid = {{ fName.valid | json }}
 fName.invalid = {{ fName.invalid | json }}
@@ -34,10 +37,24 @@ fName.untouched = {{ fName.untouched | json }}</pre>
             </div>
           </fieldset>
           <fieldset>
-            <div class="form-group">
-              <label class="col-sm-2 control-label">With help</label>
+            <div class="form-group" [class.has-error]="fSid.invalid">
+              <label class="col-sm-2 control-label">身分證字號</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                <input type="text" class="form-control"
+                       name="sid" [ngModel]="data.sid" #fSid="ngModel"
+                       required minlength="10" maxlength="10">
+                <span class="help-block">
+                  <pre>
+fSid.value = {{ fSid.value | json }}
+fSid.errors = {{ fSid.errors | json }}
+
+fSid.valid = {{ fSid.valid | json }}
+fSid.invalid = {{ fSid.invalid | json }}
+fSid.dirty = {{ fSid.dirty | json }}
+fSid.pristine = {{ fSid.pristine | json }}
+fSid.touched = {{ fSid.touched | json }}
+fSid.untouched = {{ fSid.untouched | json }}</pre>
+                </span>
               </div>
             </div>
           </fieldset>
