@@ -41,6 +41,7 @@ fName.untouched = {{ fName.untouched | json }}</pre>
               <label class="col-sm-2 control-label">身分證字號</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control"
+                       placeholder="請輸入 10 碼身份證字號"
                        name="sid" [(ngModel)]="data.sid" #fSid="ngModel"
                        required minlength="10" maxlength="10">
                 <span class="help-block">
