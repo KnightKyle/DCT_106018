@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
 import { LoginComponent } from './login/login.component';
 
+import { LoginGuard } from './login.guard';
+
 const routes: Routes = [
   { path: '', component: LayoutComponent,
     children: [
@@ -13,7 +15,8 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'cards/:type', component: CardsComponent },
       { path: 'charts',
-        loadChildren: './charts/charts.module#ChartsModule'
+        loadChildren: './charts/charts.module#ChartsModule',
+        canActivate: [LoginGuard]
       }
     ]
   },
