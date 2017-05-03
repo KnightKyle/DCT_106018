@@ -36,6 +36,7 @@ fName.untouched = {{ fName.untouched | json }}</pre>
               </div>
             </div>
           </fieldset>
+<div ngModelGroup="secret" #gSecret="ngModelGroup">
           <fieldset>
             <div class="form-group" [class.has-error]="fSid.touched && fSid.invalid">
               <label class="col-sm-2 control-label">身分證字號</label>
@@ -60,6 +61,8 @@ fSid.untouched = {{ fSid.untouched | json }}</pre>
               </div>
             </div>
           </fieldset>
+</div>
+
 
           <input type="submit" value="送出">
           <input type="button" value="重設" (click)="doReset(f)">
