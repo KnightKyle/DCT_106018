@@ -9,6 +9,7 @@ export class LoadingBtnDirective {
   // (click)="showLoading($event.target)"
   @HostListener('click', ['$event.target'])
   showLoading(fTest: HTMLButtonElement) {
+    console.log('loading');
     let old = fTest.value;
     fTest.value = 'Loading ...';
     setTimeout(function() { fTest.value = old; }, 3000);

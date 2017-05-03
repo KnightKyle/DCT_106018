@@ -23,6 +23,7 @@ export class ClassicComponent implements OnInit {
   }
 
   doReset(f: NgForm) {
+    console.log('reset');
     f.reset(this.data);
   }
 
