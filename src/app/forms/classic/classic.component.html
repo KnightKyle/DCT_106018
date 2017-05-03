@@ -45,6 +45,7 @@ fName.untouched = {{ fName.untouched | json }}</pre>
                        name="sid" [(ngModel)]="data.sid" #fSid="ngModel"
                        required minlength="10" maxlength="10">
                 <span class="help-block">
+                  <span *ngIf="fSid.touched && fSid.errors?.required">此欄位必填</span>
                   <pre>
 fSid.value = {{ fSid.value | json }}
 fSid.errors = {{ fSid.errors | json }}
